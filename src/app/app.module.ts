@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { AppComponent } from './app.component';
@@ -9,16 +9,28 @@ import { CompanyService } from './services/company.service';
 import { EmployeeService } from './services/employee.service';
 import { DepartmentService } from './services/department.service';
 import { SalaryService } from './services/salary.service';
+import { CandidatesComponent } from './components/candidates/candidates.component';
+import { CompaniesComponent } from './components/companies/companies.component';
+import { DepartmentsComponent } from './components/departments/departments.component';
+import { EmployeesComponent } from './components/employees/employees.component';
+import { SalariesComponent } from './components/salaries/salaries.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CandidatesComponent,
+    CompaniesComponent,
+    DepartmentsComponent,
+    EmployeesComponent,
+    SalariesComponent,
     // Add your other components here
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    HttpClient,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+    AppRoutingModule,
     // Add other imports here
   ],
   providers: [
